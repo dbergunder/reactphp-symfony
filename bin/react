@@ -42,15 +42,19 @@ $callback = function(Psr\Http\Message\ServerRequestInterface $request) use ($ker
     } catch (\Throwable $e) {
         return new React\Http\Response(
                 200,
-                array('Content-Type' => 'text/plain'),
+                ['Content-Type' => 'text/plain'],
                 $e->getMessage()
         );
     }
 
-
     // Convert the Symfony response to Psr response
     return $psr7Factory->createResponse($response);
 };
+
+//$callback = function(Psr\Http\Message\ServerRequestInterface $request) use ($kernel) {
+//    // Convert the Psr Request to Symfony Request
+//    return $kernel->handle($request);
+//};
 
 $loop = React\EventLoop\Factory::create();
 
