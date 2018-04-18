@@ -19,3 +19,4 @@ $ bin/react
 ### Caveats
 - Convert HttpFoundation Request/Response between Psr Request/Response
 - File uploads/transfers
+- Debug Mode enabled means memory leaks galore!
