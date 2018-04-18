@@ -6,13 +6,15 @@
         "ext-iconv": "*",
         "react/event-loop": "^0.5.1",
         "react/http": "^0.8.3",
+        "sensio/framework-extra-bundle": "^5.1",
         "symfony/console": "^4.0",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.0",
         "symfony/http-foundation": "^4.0",
         "symfony/lts": "^4@dev",
         "symfony/psr-http-message-bridge": "^1.0",
-        "symfony/yaml": "^4.0"
+        "symfony/yaml": "^4.0",
+        "zendframework/zend-diactoros": "^1.7"
     },
     "require-dev": {
         "symfony/dotenv": "^4.0"
@@ -26,8 +28,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/"
-        },
-        "classmap": ["public/index.php"]
+        }
     },
     "autoload-dev": {
         "psr-4": {

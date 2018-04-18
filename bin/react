@@ -1,6 +1,8 @@
+#!/usr/bin/env php
 <?php
 
 ini_set('memory_limit', '1G');
+set_time_limit(0);
 
 use App\Kernel;
 use Symfony\Component\Debug\Debug;
@@ -35,7 +37,16 @@ $psr7Factory = new DiactorosFactory();
 // Callback for the loop
 $callback = function(Psr\Http\Message\ServerRequestInterface $request) use ($kernel, $httpFoundationFactory, $psr7Factory) {
     // Convert the Psr Request to Symfony Request
-    $response = $kernel->handle($httpFoundationFactory->createRequest($request));
+    try {
+        $response = $kernel->handle($httpFoundationFactory->createRequest($request));
+    } catch (\Throwable $e) {
+        return new React\Http\Response(
+                200,
+                array('Content-Type' => 'text/plain'),
+                $e->getMessage()
+        );
+    }
+
 
     // Convert the Symfony response to Psr response
     return $psr7Factory->createResponse($response);
@@ -45,7 +56,9 @@ $loop = React\EventLoop\Factory::create();
 
 $server = new React\Http\Server($callback);
 
-$socket = new React\Socket\Server(8080, $loop);
+$socket = new React\Socket\Server(8081, $loop);
 $server->listen($socket);
+
+echo "System Online http://127.0.0.1:8081\n";
 
 $loop->run();
