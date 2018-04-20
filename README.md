@@ -2,6 +2,8 @@
 
 Demo of a simple Symfony 4 application running in ReactPHP
 
+Slides: https://www.slideshare.net/DavidBergunder/reactphp-symfony
+
 ### References
 - [Install Symfony 4 and Flex](https://symfony.com/doc/current/setup.html)
 - [ReachPHP documentation](https://reactphp.org/)
@@ -10,8 +12,8 @@ Demo of a simple Symfony 4 application running in ReactPHP
   - [HttpFoundation Bridge](https://github.com/symfony/psr-http-message-bridge)
   - [Zend Diactoros](https://github.com/zendframework/zend-diactoros)
 
-### Instance
-Executible PHP command in [bin/react](/bin/react)
+### Wired Up
+Executable PHP command in [bin/react](/bin/react)
 ```bash
 $ bin/react
 ```
@@ -19,4 +21,4 @@ $ bin/react
 ### Caveats
 - Convert HttpFoundation Request/Response between Psr Request/Response
 - File uploads/transfers
-- Debug Mode enabled means memory leaks galore!
+- Symfony debug and profiling enabled means memory leaks!
