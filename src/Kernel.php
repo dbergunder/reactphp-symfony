@@ -15,6 +15,8 @@ class Kernel extends BaseKernel
 
     const CONFIG_EXTS = '.{php,xml,yaml,yml}';
 
+    private $count = 0;
+
     public function getCacheDir()
     {
         return $this->getProjectDir().'/var/cache/'.$this->environment;
@@ -57,5 +59,15 @@ class Kernel extends BaseKernel
         $routes->import($confDir.'/{routes}/*'.self::CONFIG_EXTS, '/', 'glob');
         $routes->import($confDir.'/{routes}/'.$this->environment.'/**/*'.self::CONFIG_EXTS, '/', 'glob');
         $routes->import($confDir.'/{routes}'.self::CONFIG_EXTS, '/', 'glob');
+    }
+
+    public function incrementCount()
+    {
+        $this->count++;
+    }
+
+    public function getCount()
+    {
+        return $this->count;
     }
 }

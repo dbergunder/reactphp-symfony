@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
@@ -16,8 +16,12 @@ class HelloWorldController
     /**
      * @Route("/")
      */
-    public function index(Request $request) : Response
+    public function index(Request $request) : JsonResponse
     {
-        return new Response('Hello World');
+        $response = sprintf(
+            'This kernel has handled %d requests since initiation.',
+            $request->attributes->get('count', 0)
+        );
+        return new JsonResponse($response);
     }
 }

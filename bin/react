@@ -20,7 +20,7 @@ if (!isset($_SERVER['APP_ENV'])) {
     (new Dotenv())->load(__DIR__.'/../.env');
 }
 
-$env = $_SERVER['APP_ENV'] ?? 'dev';
+$env = $_SERVER['APP_ENV'] ?? 'prod';
 $debug = (bool) ($_SERVER['APP_DEBUG'] ?? ('prod' !== $env));
 
 if ($debug) {
@@ -36,9 +36,13 @@ $psr7Factory = new DiactorosFactory();
 
 // Callback for the loop
 $callback = function(Psr\Http\Message\ServerRequestInterface $request) use ($kernel, $httpFoundationFactory, $psr7Factory) {
-    // Convert the Psr Request to Symfony Request
+    $kernel->incrementCount();
     try {
-        $response = $kernel->handle($httpFoundationFactory->createRequest($request));
+        // Convert the Psr Request to Symfony Request
+        $symfonyRequest =  $httpFoundationFactory->createRequest($request);
+        // Track request count per running instance of kernel
+        $symfonyRequest->attributes->set('count', $kernel->getCount());
+        $response = $kernel->handle($symfonyRequest);
     } catch (\Throwable $e) {
         return new React\Http\Response(
                 500,
