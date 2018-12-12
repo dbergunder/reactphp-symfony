@@ -6,7 +6,7 @@ Slides: https://www.slideshare.net/DavidBergunder/reactphp-symfony
 
 ### References
 - [Install Symfony 4 and Flex](https://symfony.com/doc/current/setup.html)
-- [ReachPHP documentation](https://reactphp.org/)
+- [ReactPHP documentation](https://reactphp.org/)
   - [ReactPHP Github](https://github.com/reactphp/react)
 - [Conversion between request/response types](http://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html#psr-7-support)
   - [HttpFoundation Bridge](https://github.com/symfony/psr-http-message-bridge)
