@@ -1,4 +1,37 @@
 {
+    "doctrine/annotations": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "cb4152ebcadbe620ea2261da1a1c5a9b8cea7672"
+        }
+    },
+    "doctrine/cache": {
+        "version": "v1.8.0"
+    },
+    "doctrine/collections": {
+        "version": "v1.5.0"
+    },
+    "doctrine/common": {
+        "version": "v2.10.0"
+    },
+    "doctrine/event-manager": {
+        "version": "v1.0.0"
+    },
+    "doctrine/inflector": {
+        "version": "v1.3.0"
+    },
+    "doctrine/lexer": {
+        "version": "v1.0.1"
+    },
+    "doctrine/persistence": {
+        "version": "v1.1.0"
+    },
+    "doctrine/reflection": {
+        "version": "v1.0.0"
+    },
     "evenement/evenement": {
         "version": "v3.0.1"
     },
@@ -47,6 +80,15 @@
     "ringcentral/psr7": {
         "version": "1.2.2"
     },
+    "sensio/framework-extra-bundle": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.2",
+            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
+        }
+    },
     "symfony/cache": {
         "version": "v4.0.8"
     },
@@ -61,6 +103,9 @@
             "version": "3.3",
             "ref": "e3868d2f4a5104f19f844fe551099a00c6562527"
         }
+    },
+    "symfony/contracts": {
+        "version": "v1.0.2"
     },
     "symfony/debug": {
         "version": "v4.0.8"
@@ -107,6 +152,9 @@
     "symfony/lts": {
         "version": "4-dev"
     },
+    "symfony/polyfill-ctype": {
+        "version": "v1.10.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.7.0"
     },
@@ -121,6 +169,9 @@
             "version": "4.0",
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
+    },
+    "symfony/var-exporter": {
+        "version": "v4.2.1"
     },
     "symfony/yaml": {
         "version": "v4.0.8"
