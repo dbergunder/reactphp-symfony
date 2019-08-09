@@ -38,8 +38,8 @@ $psrHttpFactory = new PsrHttpFactory($psr7Factory, $psr7Factory, $psr7Factory, $
 
 // Callback for the loop
 $callback = function(Psr\Http\Message\ServerRequestInterface $request) use ($kernel, $httpFoundationFactory, $psrHttpFactory) {
-    $kernel->incrementCount();
     try {
+        $kernel->incrementCount();
         // Convert the Psr Request to Symfony Request
         $symfonyRequest =  $httpFoundationFactory->createRequest($request);
         // Track request count per running instance of kernel
@@ -61,7 +61,7 @@ $loop = React\EventLoop\Factory::create();
 
 $server = new React\Http\Server($callback);
 
-$socket = new React\Socket\Server(8081, $loop);
+$socket = new React\Socket\Server('0.0.0.0:8081', $loop);
 $server->listen($socket);
 
 echo "System Online http://127.0.0.1:8081\n";
