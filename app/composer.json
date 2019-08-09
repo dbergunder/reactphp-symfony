@@ -4,6 +4,7 @@
     "require": {
         "php": "^7.2",
         "ext-iconv": "*",
+        "nyholm/psr7": "^1.1",
         "react/event-loop": "^0.5.1",
         "react/http": "^0.8.3",
         "sensio/framework-extra-bundle": "^5.1",

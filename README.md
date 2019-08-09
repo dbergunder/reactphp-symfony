@@ -13,7 +13,7 @@ Slides: https://www.slideshare.net/DavidBergunder/reactphp-symfony
   - [Zend Diactoros](https://github.com/zendframework/zend-diactoros)
 
 ### Wired Up
-Executable PHP command in [bin/react](/bin/react)
+Executable PHP command in [bin/react](/app/bin/react)
 ```bash
 $ bin/react
 ```

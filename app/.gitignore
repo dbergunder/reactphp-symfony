@@ -1,9 +1,4 @@
-.idea
-
-composer.phar
-app/vendor
-.env
-
+/.idea
 ###> symfony/framework-bundle ###
 /app/.env
 /app/public/bundles/
